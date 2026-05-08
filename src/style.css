@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Orbitron', monospace;
+  overflow: hidden;
+  background: #000;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(26, 31, 30, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(74, 95, 77, 0.8);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 157, 138, 0.9);
+}
+
+/* HUD 样式基础 */
+.hud-panel {
+  background: rgba(26, 31, 30, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(74, 95, 77, 0.5);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hud-text {
+  color: #ffb82e;
+  text-shadow: 0 0 10px rgba(255, 184, 46, 0.5);
+  font-weight: 700;
+}
+
+/* 加载动画 */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 20px rgba(255, 184, 46, 0.8);
+  }
+  50% {
+    opacity: 0.6;
+    text-shadow: 0 0 10px rgba(255, 184, 46, 0.4);
+  }
+}
+
+.loading-text {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
